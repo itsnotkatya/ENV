@@ -1,13 +1,12 @@
 #!/bin/bash
 
 echo "Pass a path:"
-read path
-echo $path
+thispath=$path
 
 defaultPath=/home/$(whoami)/Desktop
 
-if [ -n "$path" ]; then
-    export my_var=$path
+if [ -n "$thispath" ]; then
+    export my_var=$thispath
 else
     echo "Path is empty! Exporting default path ..."
     export my_var=$defaultPath
@@ -17,3 +16,6 @@ echo "Exported path: $my_var"
 
 file = "variables.txt"
 for var in $(cat $file)
+do
+echo $var
+done
